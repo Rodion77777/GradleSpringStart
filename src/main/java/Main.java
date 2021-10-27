@@ -1,7 +1,9 @@
 import Config.AnimalsConfiguration;
+import Config.DaysOfWeekConfiguration;
 import Entities.Animals.Cat;
 import Entities.Animals.Dog;
 import Entities.Animals.Parrot;
+import Entities.SevenDays.WeekDay;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,7 +12,13 @@ import static java.lang.System.out;
 public class Main {
     public static void main (String[] args)
     {
-        configContext();
+        weekDaysContext();
+    }
+
+    public static void weekDaysContext ()
+    {
+        ApplicationContext daysOfWeekContext = new AnnotationConfigApplicationContext(DaysOfWeekConfiguration.class);
+        out.println(daysOfWeekContext.getBean(WeekDay.class).getWeekDayName());
     }
 
     public static void entitiesContext ()
