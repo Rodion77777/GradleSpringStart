@@ -1,19 +1,17 @@
 package Entities.Animals;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
-@Getter
-@Setter
 public class Dog {
     public String name = "Sharik";
 
-    @Bean
-    public Dog getNewDog()
+    public String getName()
     {
-        return new Dog();
+        return this.name;
+    }
+    public void setName(String name)
+    {
+        this.name = name;
     }
 }
