@@ -1,4 +1,4 @@
-import Config.Configuration;
+import Config.AnimalsConfiguration;
 import Entities.Animals.Cat;
 import Entities.Animals.Dog;
 import Entities.Animals.Parrot;
@@ -26,7 +26,7 @@ public class Main {
 
     public static void configContext ()
     {
-        ApplicationContext contextConfiguration = new AnnotationConfigApplicationContext(Configuration.class);
+        ApplicationContext contextConfiguration = new AnnotationConfigApplicationContext(AnimalsConfiguration.class);
 
         out.printf("\nCat: %s\nDog: %s\nParrot: %s\n",
                 contextConfiguration.getBean(Cat.class).getName(),
